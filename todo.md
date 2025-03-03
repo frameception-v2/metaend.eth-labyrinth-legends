@@ -54,7 +54,7 @@
   });
   ```
 
-- [ ] Task 5: Implement StartScreen component  
+- [x] Task 5: Implement StartScreen component  
   File: src/components/StartScreen.jsx  
   Action: Create UI with stats display  
   ```jsx

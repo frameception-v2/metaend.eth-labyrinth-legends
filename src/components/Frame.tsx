@@ -13,6 +13,7 @@ import {
   CardDescription,
   CardContent,
 } from "~/components/ui/card";
+import StartScreen from "~/components/StartScreen";
 
 import { config } from "~/components/providers/WagmiProvider";
 import { truncateAddress } from "~/lib/truncateAddress";
@@ -140,7 +141,7 @@ export default function Frame() {
         <h1 className="text-2xl font-bold text-center mb-4 text-gray-700 dark:text-gray-300">
           {PROJECT_TITLE}
         </h1>
-        <ExampleCard />
+        <StartScreen />
       </div>
     </div>
   );
