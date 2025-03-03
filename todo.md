@@ -27,7 +27,7 @@
   });
   ```
 
-- [ ] Task 3: Create dungeon generator  
+- [x] Task 3: Create dungeon generator  
   File: src/game/dungeon.js  
   Action: Create module with random room generation  
   ```javascript
