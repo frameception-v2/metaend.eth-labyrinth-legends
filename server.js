@@ -58,6 +58,24 @@ app.post('/api/move', (req, res) => {
   }
 });
 
+// Combat handling endpoint
+app.post('/api/battle', (req, res) => {
+  try {
+    const state = verifyToken(req.body.token);
+    
+    // Simple damage calculation: player ATK - enemy DEF (min 1 damage)
+    const damage = Math.max(1, state.player.atk - (state.enemy?.def || 0));
+    state.enemy.hp -= damage;
+    
+    // Update and return new state
+    const token = jwt.sign(state, SECRET, { expiresIn: '1h' });
+    res.json({ token, damage });
+  } catch (error) {
+    console.error('Battle error:', error);
+    res.status(401).json({ error: 'Invalid combat session' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

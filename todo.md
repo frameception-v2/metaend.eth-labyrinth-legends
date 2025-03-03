@@ -41,15 +41,16 @@
   }
   ```
 
-- [ ] Task 4: Build combat endpoint  
+- [x] Task 4: Build combat endpoint  
   File: server.js  
   Action: Add damage calculation logic  
   ```javascript
   app.post('/api/battle', (req, res) => {
     const state = verifyToken(req.body.token);
-    const damage = calculateDamage(state.player, req.body.action);
+    const damage = Math.max(1, state.player.atk - (state.enemy?.def || 0));
     state.enemy.hp -= damage;
-    res.json({ token: jwt.sign(state, SECRET) });
+    const token = jwt.sign(state, SECRET, { expiresIn: '1h' });
+    res.json({ token, damage });
   });
   ```
 
