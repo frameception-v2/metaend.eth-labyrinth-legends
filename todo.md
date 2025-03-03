@@ -1,4 +1,4 @@
-- [ ] Task 1: Create POST /api/start endpoint  
+- [x] Task 1: Create POST /api/start endpoint  
   File: server.js  
   Action: Create endpoint with JWT response  
   Description: Generate initial GameState with player stats and first room  
