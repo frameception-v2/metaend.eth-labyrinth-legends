@@ -14,7 +14,7 @@
   });
   ```
 
-- [ ] Task 2: Implement POST /api/move endpoint  
+- [x] Task 2: Implement POST /api/move endpoint  
   File: server.js  
   Action: Add direction validation and room updates  
   Description: Handle north/south/east/west inputs  
